@@ -1,0 +1,49 @@
+PLANEJADOR CURRICULAR FEELT/UFU · PASTA DO SITE
+================================================
+
+O que tem aqui
+--------------
+index.html ............ o planejador
+horarios.js ........... horários de todas as matrizes (gerado pelo script)
+sw.js, manifest... .... permitem instalar e usar sem internet
+icones/ ............... ícone do aplicativo
+planilhas/ ............ coloque aqui a planilha de oferta da coordenação (.xlsx)
+relatorios/ ........... relatórios de conferência gerados pelo script
+ferramentas/ .......... script de atualização, correspondencias.csv,
+                        calendario_academico.csv e histórico
+
+Atualizar os horários (todo semestre)
+-------------------------------------
+1. Coloque a planilha nova (.xlsx) na pasta "planilhas".
+   Pode ser uma única planilha com os três cursos ou uma por curso.
+   Se for .xls antigo, abra no Excel e salve como .xlsx.
+2. Dê dois cliques em "atualizar_horarios.bat".
+3. O relatório de conferência abre no navegador. Confira:
+   - "Pronto para publicar": está tudo certo.
+   - "Pendências para confirmar": copie a linha sugerida para
+     ferramentas/correspondencias.csv (se for a mesma disciplina) e rode de novo.
+   - "Não publicado": a planilha tem problemas; nada foi alterado.
+4. Teste com "testar.bat" e, se estiver certo, envie para o GitHub
+   (index.html, horarios.js, sw.js, manifest.webmanifest e icones).
+
+Calendário acadêmico (todo semestre)
+------------------------------------
+Os feriados nacionais e municipais de Uberlândia são descontados
+automaticamente. Recessos e reposições de aula da UFU ficam em
+ferramentas/calendario_academico.csv (data;tipo;descricao).
+1. Pela resolução do calendário acadêmico, acrescente as datas do semestre:
+   tipo = feriado, recesso, sem aula ou "reposicao segunda" (terca, quarta...).
+2. Rode "atualizar_horarios.bat" (funciona mesmo sem planilha nova).
+3. Confira a seção "Calendário acadêmico" no relatório.
+
+Testar no computador
+--------------------
+- Teste rápido: dois cliques em index.html.
+- Teste completo (aviso de horários novos, instalação e uso offline):
+  dois cliques em "testar.bat". Abre http://localhost:8080/ no navegador.
+  Para encerrar, feche a janela preta.
+
+Desfazer uma atualização
+------------------------
+A versão anterior fica em ferramentas/historico. Copie o arquivo de lá para a
+pasta principal com o nome horarios.js.
