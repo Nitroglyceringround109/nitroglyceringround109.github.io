@@ -118,7 +118,7 @@ header.top h1{font-size:1.35rem;margin:0;line-height:1.2}
 /* Grade */
 .periods{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;align-items:flex-start}
 .col{flex:0 0 205px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:8px}
-.col h3{font-size:.95rem;margin:2px 4px 8px;display:flex;justify-content:space-between}
+.col h3{font-size:.95rem;margin:2px 4px 8px;display:flex;justify-content:space-between;flex-wrap:wrap;align-items:baseline;gap:0 8px}
 .col h3 .muted{font-weight:400;font-size:.78rem}
 .cards{display:flex;flex-direction:column;gap:7px}
 .opt-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
@@ -290,7 +290,8 @@ html{overflow-anchor:none}
 .periods.single{display:block}
 .periods.single .col{flex:none;width:auto}
 .periods.single .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
-.col h3 .ph-stat{display:block;font-weight:400;font-size:.78rem}
+.col h3 .ph-stat{display:block;font-weight:400;font-size:.78rem;white-space:nowrap;margin-left:auto}
+.col h3 .muted{white-space:nowrap}
 .period-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 4px 10px}
 .period-done{color:var(--ok);font-weight:700}
 #batchBar:empty{display:none}
@@ -551,6 +552,8 @@ dialog#ttDlg::backdrop{background:rgba(0,0,0,.45)}
 .wk-weekbar select{max-width:100%}
 .upd-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;background:var(--surface);color:var(--text);border:1px solid var(--accent);border-radius:8px;padding:8px 12px;display:flex;gap:10px;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,.2);max-width:calc(100% - 32px)}
 .upd-bar[hidden]{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) #logoUfu,:root:not([data-theme="light"]) #logoFeelt{filter:brightness(0) invert(1) opacity(.92)}}
+:root[data-theme="dark"] #logoUfu,:root[data-theme="dark"] #logoFeelt{filter:brightness(0) invert(1) opacity(.92)}
 .plan-btns{display:flex;flex-wrap:wrap;gap:8px}
 .wk-mine,.ag-ev.wk-mine{background:color-mix(in srgb,var(--evc) 16%,var(--surface));border:2px solid var(--evc)}
 .wk-key.wk-mine{padding:1px 6px}
@@ -1831,15 +1834,15 @@ PLANNER_DATASETS.push({
     {n:7, p:2, name:"Álgebra Linear", t:45, pr:0, pre:[2], co:[]},
     {n:8, p:2, name:"Cálculo Diferencial e Integral II", t:90, pr:0, pre:[1], co:[]},
     {n:9, p:2, name:"Física Básica: Mecânica", t:60, pr:0, pre:[1], co:[10]},
-    {n:10, p:2, name:"Física Básica: Mecânica, Experimental de", t:0, pr:30, pre:[], co:[9]},
+    {n:10, p:2, name:"Experimental de Física Básica: Mecânica", t:0, pr:30, pre:[], co:[9]},
     {n:11, p:2, name:"Metrologia", t:30, pr:30, pre:[], co:[]},
     {n:12, p:2, name:"Programação Procedimental", t:30, pr:30, pre:[6], co:[]},
     {n:13, p:2, name:"Sistemas Digitais", t:30, pr:0, pre:[5], co:[14]},
-    {n:14, p:2, name:"Sistemas Digitais, Experimental de", t:0, pr:30, pre:[], co:[13]},
+    {n:14, p:2, name:"Experimental de Sistemas Digitais", t:0, pr:30, pre:[], co:[13]},
     // 3º período
     {n:15, p:3, name:"Cálculo Diferencial e Integral III", t:90, pr:0, pre:[8], co:[]},
     {n:16, p:3, name:"Física Básica: Eletricidade e Magnetismo", t:60, pr:0, pre:[9], co:[17]},
-    {n:17, p:3, name:"Física Básica: Eletricidade e Magnetismo, Experimental de", t:0, pr:30, pre:[], co:[16]},
+    {n:17, p:3, name:"Experimental de Física Básica: Eletricidade e Magnetismo", t:0, pr:30, pre:[], co:[16]},
     {n:18, p:3, name:"Elementos de Sistemas Computacionais", t:60, pr:0, pre:[13], co:[]},
     {n:19, p:3, name:"Estrutura de Dados", t:60, pr:0, pre:[12], co:[]},
     {n:20, p:3, name:"Inteligência Artificial, Ética e Sociedade", t:30, pr:0, pre:[], co:[]},
@@ -1851,14 +1854,14 @@ PLANNER_DATASETS.push({
     {n:25, p:4, name:"Análise de Algoritmos", t:60, pr:0, pre:[19], co:[]},
     {n:26, p:4, name:"Arquitetura e Organização de Computadores", t:60, pr:0, pre:[18], co:[]},
     {n:27, p:4, name:"Banco de Dados", t:15, pr:45, pre:[19], co:[]},
-    {n:28, p:4, name:"Circuitos Eletro Elétricos I", t:75, pr:0, pre:[16], co:[29]},
-    {n:29, p:4, name:"Circuitos Eletro Elétricos I, Experimental de", t:0, pr:15, pre:[11], co:[28]},
+    {n:28, p:4, name:"Circuitos Elétricos I", t:75, pr:0, pre:[16], co:[29]},
+    {n:29, p:4, name:"Experimental de Circuitos Elétricos I", t:0, pr:15, pre:[11], co:[28]},
     {n:30, p:4, name:"Atividades Curriculares de Extensão I", t:0, pr:90, pre:[], co:[], kind:"extensao"},
     // 5º período
     {n:31, p:5, name:"Cálculo Numérico", t:60, pr:0, pre:[7, 15], co:[]},
     {n:32, p:5, name:"Empreendedorismo e Inovação", t:30, pr:0, pre:[], co:[]},
     {n:33, p:5, name:"Eletrônica Analógica I", t:60, pr:0, pre:[28], co:[34]},
-    {n:34, p:5, name:"Eletrônica Analógica I, Experimental de", t:0, pr:30, pre:[], co:[33]},
+    {n:34, p:5, name:"Experimental de Eletrônica Analógica I", t:0, pr:30, pre:[], co:[33]},
     {n:35, p:5, name:"Engenharia de Software", t:45, pr:0, pre:[22, 27], co:[]},
     {n:36, p:5, name:"Fundamentos da Inteligência Artificial", t:30, pr:15, pre:[23], co:[]},
     {n:37, p:5, name:"Sistemas Operacionais", t:45, pr:0, pre:[12, 26], co:[]},
@@ -1889,7 +1892,7 @@ PLANNER_DATASETS.push({
   // Interpretações adotadas (documentação dos dados; não exibidas na tela)
   notes: [
     "Cargas CHT/CHP/CHD/CHE: teórica = CHT + CHD (a distância) e prática = CHP + CHE (extensão). Disciplinas com CHD: Elementos de Sistemas Computacionais, Segurança de Sistemas Computacionais, Engenharia de Contexto em IA Generativa e IA Aplicada à Cibersegurança (30 h cada).",
-    "\"Circuitos Eletro Elétricos I\" é o nome do fluxograma; no quadro de horários a disciplina aparece como Circuitos Elétricos I (FEELT31301) e Experimental de Circuitos Elétricos I (FEELT31302).",
+    "No fluxograma do PPC 2026-1, Circuitos Elétricos I aparece como \"Circuitos Eletro Elétricos I\" e as disciplinas experimentais aparecem com o nome invertido (ex.: \"Sistemas Digitais, Experimental de\"). Aqui foram usados os nomes do quadro de horários e das demais matrizes.",
     "O fluxograma escreve \"Apredizagem Profunda e Modelos Generativos\"; foi corrigido para \"Aprendizagem\", como no quadro (FEELT37701).",
     "Atividade Acadêmicas Complementares (90 h) e Disciplinas Optativas (90 h) são exigências de carga horária; CH total do curso: 3450 h."
 ]
@@ -1919,7 +1922,11 @@ const DS = (() => {
 const CURRICULUM = DS.CURRICULUM;
 const HORARIOS = window.PLANNER_HORARIOS || null;   // horarios.js (gerado a partir da planilha de oferta)
 const BASE_TT = HORARIOS?.matrizes?.[DS.id] || DS.BASE_TT || { periodo: "—", fonte: "sem quadro de horários", courses: {} };
-const TT_LABEL = BASE_TT.rotulo || `Quadro ${BASE_TT.periodo}`;                       // selo curto
+const TT_LABEL = BASE_TT.rotulo || `Quadro ${BASE_TT.periodo}`;
+// Início e fim do semestre (planilha de oferta). Quando esta matriz ainda não veio
+// na planilha, usa as datas do mesmo período de outra matriz (o calendário é o da UFU).
+const SEMESTRE = BASE_TT.semestre || HORARIOS?.semestre
+  || Object.values(HORARIOS?.matrizes || {}).find(m => m?.semestre?.inicio && m.periodo === BASE_TT.periodo)?.semestre || null;                       // selo curto
 const TT_SRC = /^oferta/i.test(TT_LABEL) ? `planilha de oferta ${BASE_TT.periodo}` : `quadro de horários ${BASE_TT.periodo}`;
 function switchDataset(id){
   if (!PLANNER_DATASETS.some(d => d.id === id)) return;
@@ -3071,7 +3078,7 @@ function renderWeek(){
 // Seletor de semana: aparece quando alguma aula da grade acontece só em datas específicas
 function weekSelectHtml(pv){
   const all = collectWeek(ui.week, pv, "", true).events;
-  const sem = BASE_TT.semestre;
+  const sem = SEMESTRE;
   if (!sem?.inicio || !all.some(e => e.dated)) { ui.wkWeek = ""; return ""; }
   const d0 = new Date(sem.inicio + "T12:00:00"); d0.setDate(d0.getDate() - ((d0.getDay() + 6) % 7));   // segunda-feira
   let opts = "", mon = d0.toISOString().slice(0, 10), i = 1;
@@ -3385,7 +3392,7 @@ function buildPrint(filter){
   return { pages: chunks.length + 1, scale };
 }
 function pdfCalendarHtml(){
-  const sem = BASE_TT.semestre; if (!sem?.inicio || !sem?.fim) return "";
+  const sem = SEMESTRE; if (!sem?.inicio || !sem?.fim) return "";
   const off = noClassDays(sem.inicio, sem.fim), reps = reposicoes(sem.inicio, sem.fim);
   const dn = d => DAY[weekdayOf(d)].s;
   return `<h2>Feriados e dias sem aula (${fmtD(sem.inicio)} a ${fmtD(sem.fim)})</h2>
@@ -3762,7 +3769,7 @@ function icsUntil(iso){   // fim do dia (horário de Brasília, UTC-3) em UTC
 function firstOnOrAfter(iso, weekday){ let d = iso, g = 0; while (weekdayOf(d) !== weekday && g++ < 7) d = addDaysISO(d, 1); return d; }
 const icsId = s => String(s).replace(/[^A-Za-z0-9.-]+/g, "_");
 function icsPeriodDefault(){
-  const sem = BASE_TT.semestre;
+  const sem = SEMESTRE;
   if (sem?.inicio && sem?.fim) return { from: sem.inicio, to: sem.fim, fromSheet: true };
   const t = new Date().toISOString().slice(0, 10);
   return { from: t, to: addDaysISO(t, 120), fromSheet: false };
@@ -3836,7 +3843,7 @@ function updateIcsDialog(){
 function openIcsDialog(){
   const p = icsPeriodDefault();
   document.getElementById("icsFrom").value = p.from; document.getElementById("icsTo").value = p.to;
-  document.getElementById("icsPeriodNote").textContent = p.fromSheet ? `Período do semestre na ${TT_SRC}.` : "Ajuste o período do semestre.";
+  document.getElementById("icsPeriodNote").textContent = p.fromSheet ? `Período do semestre ${BASE_TT.periodo || ""} (planilha de oferta da UFU).` : "Ajuste o período do semestre.";
   document.getElementById("icsAulasTxt").textContent = `Aulas (${WEEK_FILTERS[ui.week].replace(/^Somente /, "").replace(/^d/, "D")})`;
   document.getElementById("icsMineTxt").textContent = `Meus compromissos (${state.mine.length})`;
   document.getElementById("icsCalName").textContent = BASE_TT.periodo || "";
